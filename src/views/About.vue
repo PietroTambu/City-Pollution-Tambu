@@ -6,6 +6,7 @@
       <h3>Working progress...</h3>
       <p> Github: <a href="https://github.com/PietroTambu/city-pollution-codemotion" target="_blank">City Pollution Codemotion</a></p>
       <p><a href="https://firebase.google.com/" target="_blank">Google Firebase</a></p>
+      <p><a href="https://stackoverflow.com/" target="_blank">Stack Overflow</a></p>
       <p><a href="https://vuejs.org/" target="_blank">Vue JS framework</a></p>
       <p><a href="https://aqicn.org/map/world/" target="_blank">Air Pollution in World API</a></p>
       <img src="../assets/favicon.png" alt="logo" width="100px">
