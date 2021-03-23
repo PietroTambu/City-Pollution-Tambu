@@ -9,8 +9,7 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home
-  }
-  /*
+  },
   {
     path: '/about',
     name: 'About',
@@ -19,7 +18,6 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () => import('../views/About.vue')
   }
-  */
 ]
 
 const router = new VueRouter({
