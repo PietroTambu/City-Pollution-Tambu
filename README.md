@@ -1,4 +1,4 @@
-# city-pollution-codemotion
+# City-Pollution-Codemotion
 
 ## Project setup
 ```
