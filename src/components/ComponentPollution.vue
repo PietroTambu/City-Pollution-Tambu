@@ -235,16 +235,6 @@ export default {
 
 @import '../scss/custom.scss';
 
-.div-main {
-  width: 65vw;
-  max-width: 600px;
-  margin: auto;
-  border: 2px black solid;
-  border-radius: 15px;
-  box-shadow: 0 0 10px #000;
-  background-color: rgba(255, 255, 255, 0.5);
-}
-
 input {
   width: 90%;
   height: 40px;
@@ -274,6 +264,21 @@ button {
   border-radius: 10px;
 }
 
+button:hover {
+  transition: box-shadow 0.2s;
+  box-shadow: 0 0 3px #000;
+}
+
+.div-main {
+  width: 65vw;
+  max-width: 600px;
+  margin: auto;
+  border: 2px black solid;
+  border-radius: 15px;
+  box-shadow: 0 0 10px #000;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
 .div-style {
   width: 100%;
   margin: auto;
@@ -293,11 +298,6 @@ button {
 .div-style:hover {
   transition: box-shadow 0.7s;
   box-shadow: 0 0 10px rgb(77, 77, 77);
-}
-
-button:hover {
-  transition: box-shadow 0.2s;
-  box-shadow: 0 0 3px #000;
 }
 
 .title-search {
