@@ -1,8 +1,8 @@
 const axios = require('axios')
 
-var service = {
+const service = {
   async axiosRequest (usage, city, lat, lon) {
-    var options = {}
+    let options = {}
     if (usage === 'city') {
       options = {
         method: 'GET',
@@ -20,7 +20,7 @@ var service = {
         }
       }
     } else if (usage === 'gps') {
-      const getCurrentPositionOptions = new Promise((resolve, reject) => {
+      const getCurrentPositionOptions = new Promise((resolve) => {
         navigator.geolocation.getCurrentPosition((position) => {
           const options = {
             method: 'GET',
@@ -49,7 +49,6 @@ var service = {
       }
     }
     try {
-      // console.log(options)
       const response = await axios.request(options)
       return response.data
     } catch (error) {

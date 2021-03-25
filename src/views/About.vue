@@ -9,7 +9,7 @@
       <p><a href="https://stackoverflow.com/" target="_blank">Stack Overflow</a></p>
       <p><a href="https://vuejs.org/" target="_blank">Vue JS framework</a></p>
       <p><a href="https://aqicn.org/map/world/" target="_blank">Air Pollution in World API</a></p>
-      <img src="../assets/favicon.png" alt="logo" width="100px">
+      <img src="../assets/favicon.png" alt="logo" width="100" height="100">
     </div>
   </div>
 </template>
@@ -33,7 +33,6 @@ export default {
   box-shadow: 0 0 10px #000;
   background-color: rgba(255, 255, 255, 0.5);
   margin-top: 30px;
-  width: 100%;
   padding: 20px;
 }
 

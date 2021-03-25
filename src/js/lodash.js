@@ -1,8 +1,8 @@
 const _ = require('lodash')
 
-var lodash = {
+const lodash = {
   lodashCheck (weatherData) {
-    var data = {
+    const data = {
       aqi: _.get(weatherData, 'aqi', 'unknown'),
       lat: _.get(weatherData.city.geo, '[0]', 'unknown'),
       lon: _.get(weatherData.city.geo, '[1]', 'unknown'),

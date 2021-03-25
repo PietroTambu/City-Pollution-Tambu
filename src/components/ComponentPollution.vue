@@ -38,13 +38,13 @@
           <b-tab title="GPS location" :title-link-class="linkClassInputType(2)">
             <div class="div-style">
               <h3 class="title-search">Get AQI from your GPS position:</h3>
-              <button id="buttonCoordinates" @click="get('gps')">Search</button>
+              <button @click="get('gps')">Search</button>
             </div>
           </b-tab>
           <b-tab title="IP location" :title-link-class="linkClassInputType(3)">
             <div class="div-style">
               <h3 class="title-search">Get AQI from your IP position:</h3>
-              <button id="buttonCoordinates" @click="get('here')">Search</button>
+              <button @click="get('here')">Search</button>
             </div>
           </b-tab>
         </b-tabs>
@@ -126,7 +126,7 @@ export default {
   },
   methods: {
     async get (usage) {
-      var error = false
+      let error = false
       if (usage === 'city') {
         this.showInput = !this.showInput
         if (this.inputCity === '') {
@@ -182,7 +182,7 @@ export default {
         this.inputLon = ''
       } else if (usage === 'gps') {
         this.showInput = !this.showInput
-        var permission = await navigator.permissions.query({ name: 'geolocation' })
+        const permission = await navigator.permissions.query({ name: 'geolocation' })
         if (permission.state === 'denied') {
           error = true
           alert('GPS position is not allowed, give permission and reload...')
@@ -287,7 +287,7 @@ button {
   box-shadow: 0 0 5px rgb(54, 54, 54);
   transition: box-shadow 0.3s;
   background-color: rgba(255, 255, 255, 0.4);
-  font-family: Fraunces;
+  font-family: Fraunces,monospace;
 }
 
 .div-style:hover {
