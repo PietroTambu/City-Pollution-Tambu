@@ -9,7 +9,7 @@
       <p><a href="https://stackoverflow.com/" target="_blank">Stack Overflow</a></p>
       <p><a href="https://vuejs.org/" target="_blank">Vue JS framework</a></p>
       <p><a href="https://aqicn.org/map/world/" target="_blank">Air Pollution in World API</a></p>
-      <img src="../assets/favicon.png" alt="logo" width="100" height="100">
+      <img src="../assets/favicon.png" alt="logo" width="150" height="150">
     </div>
   </div>
 </template>
