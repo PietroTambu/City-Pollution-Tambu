@@ -8,13 +8,13 @@
         <hr>
         <h3>Source Code:</h3>
         <p> GitHub:
-          <a href="https://github.com/PietroTambu/city-pollution-codemotion" target="_blank">City Pollution Codemotion </a>
+          <a href="https://github.com/PietroTambu/city-pollution-codemotion" target="_blank">City-Pollution-Codemotion </a>
           <img src="../assets/github.png" alt="GitHub Logo" width="50" height="50" style="margin-left: 10px">
         </p>
         <hr>
         <b-table small :fields="fields" :items="items" responsive="sm" :dark="dark" :bordered="bordered">
           <template #cell(name)="data">
-            <b class="text-dark"><p :href="data.value.url" class="table-p" target="_blank">{{ data.value.name }}</p></b>
+            <b class="text-dark"><p class="table-p"><a :href="data.value.url" target="_blank">{{ data.value.name }}</a></p></b>
           </template>
           <template #cell(utility)="data">
             <b class="text-dark"><p class="table-p">{{ data.value }}</p></b>
@@ -73,7 +73,7 @@ export default {
   border: 2px black solid;
   border-radius: 15px;
   box-shadow: 0 0 10px #000;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.75);
   padding: 20px;
 }
 
