@@ -14,10 +14,10 @@
         <hr>
         <b-table small :fields="fields" :items="items" responsive="sm" :dark="dark" :bordered="bordered">
           <template #cell(name)="data">
-            <b class="text-dark"><p class="table-p"><a :href="data.value.url" target="_blank">{{ data.value.name }}</a></p></b>
+            <b class="text-dark"><a :href="data.value.url" target="_blank">{{ data.value.name }}</a></b>
           </template>
           <template #cell(utility)="data">
-            <b class="text-dark"><p class="table-p">{{ data.value }}</p></b>
+            <b class="text-dark">{{ data.value }}</b>
           </template>
           <template #cell(icon)="data">
             <img v-bind:src="data.value" alt="ok" width="50" height="50">
@@ -33,11 +33,16 @@ export default {
   name: 'About',
   data () {
     return {
-      fields: ['name', 'utility', 'icon'],
+      fields: [
+        { key: 'name', tdClass: 'align-middle' },
+        { key: 'utility', tdClass: 'align-middle' },
+        'icon'
+      ],
       items: [
         { name: { name: 'Google Firebase', url: 'https://firebase.google.com/' }, utility: 'Hosting Service Provider', icon: '../assets/firebase.png', _rowVariant: 'light' },
         { name: { name: 'Stack Overflow', url: 'https://stackoverflow.com/' }, utility: 'Learn Knowledge', icon: '../assets/stackoverflow.png', _rowVariant: 'light' },
-        { name: { name: 'Vue.js Framework', url: 'https://vuejs.org/' }, utility: 'Development Platform', icon: '../assets/vue-js.png', _rowVariant: 'light' },
+        { name: { name: 'Vue.js Framework', url: 'https://vuejs.org/' }, utility: 'JavaScript Framework', icon: '../assets/vue-js.png', _rowVariant: 'light' },
+        { name: { name: 'Webstorm for education', url: 'https://www.jetbrains.com/webstorm/' }, utility: 'JavaScript IDE', icon: '../assets/webstorm-icon.png', _rowVariant: 'light' },
         { name: { name: 'World Air Quality Index', url: 'https://aqicn.org/map/world/' }, utility: 'Data Provider', icon: '../assets/aqicn-logo.png', _rowVariant: 'light' }
       ],
       tableVariants: ['primary', 'secondary', 'info', 'danger', 'warning', 'success', 'light', 'dark'],
@@ -60,10 +65,7 @@ export default {
 
 <style lang="scss" scoped>
 
-.table-p{
-  margin-bottom: 15px;
-  margin-top: 15px;
-}
+@import '../scss/custom.scss';
 
 .div-main {
   max-width: 550px;
@@ -73,7 +75,7 @@ export default {
   border: 2px black solid;
   border-radius: 15px;
   box-shadow: 0 0 10px #000;
-  background-color: rgba(255, 255, 255, 0.75);
+  background-color: rgba(255, 255, 255, 0.85);
   padding: 20px;
 }
 
@@ -84,7 +86,7 @@ h3 {
 h2 {
   font-family: PottaOne;
 }
-p,a {
-  font-family: "Nirmala UI", monospace;
+p,a,b {
+  font-family: "Fraunces";
 }
 </style>
