@@ -12,17 +12,19 @@
           <img src="../assets/github.png" alt="GitHub Logo" width="50" height="50" style="margin-left: 10px">
         </p>
         <hr>
-        <b-table small :fields="fields" :items="items" responsive="sm" :dark="dark" :bordered="bordered">
-          <template #cell(name)="data">
-            <b class="text-dark"><a :href="data.value.url" target="_blank">{{ data.value.name }}</a></b>
-          </template>
-          <template #cell(utility)="data">
-            <b class="text-dark">{{ data.value }}</b>
-          </template>
-          <template #cell(icon)="data">
-            <img v-bind:src="data.value" alt="ok" width="50" height="50">
-          </template>
-        </b-table>
+        <table class="b-table">
+          <b-table small :fields="fields" :items="items" responsive="sm" :bordered="bordered" :dark="dark">
+            <template  #cell(name)="data">
+              <b class="text-dark" ><a :href="data.value.url" target="_blank">{{ data.value.name }}</a></b>
+            </template>
+            <template #cell(utility)="data">
+              <b class="text-dark">{{ data.value }}</b>
+            </template>
+            <template #cell(icon)="data">
+              <img v-bind:src="data.value" alt="ok" width="50" height="50">
+            </template>
+          </b-table>
+        </table>
       </div>
     </b-overlay>
   </div>
@@ -65,8 +67,6 @@ export default {
 
 <style lang="scss" scoped>
 
-@import '../scss/custom.scss';
-
 .div-main {
   max-width: 550px;
   margin: auto;
@@ -75,7 +75,7 @@ export default {
   border: 2px black solid;
   border-radius: 15px;
   box-shadow: 0 0 10px #000;
-  background-color: rgba(255, 255, 255, 0.85);
+  background-color: rgba(243, 243, 243, 0.85);
   padding: 20px;
 }
 
