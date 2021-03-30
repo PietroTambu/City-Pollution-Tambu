@@ -62,7 +62,6 @@ export default {
       }, 600)
   }
 }
-
 </script>
 
 <style lang="scss" scoped>
@@ -78,7 +77,6 @@ export default {
   background-color: rgba(243, 243, 243, 0.85);
   padding: 20px;
 }
-
 h3 {
   font-family: Fraunces;
   font-weight: 400;

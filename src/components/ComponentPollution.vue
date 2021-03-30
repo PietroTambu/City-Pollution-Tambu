@@ -11,7 +11,7 @@
                 placeholder="insert city name"
                 v-on:keyup.enter="$event.target.blur(); get('city')"
                 v-bind:class="{'form-control is-invalid': inputCityError}"
-                />
+              />
               <small class="text-danger">{{ textDangerInputCity }}</small>
               <div><button @click="$event.target.blur(); get('city')">Search</button></div>
             </div>
@@ -20,16 +20,16 @@
             <div class="div-style">
               <h3 class="title-search">Insert geo-coordinates:</h3>
               <input
-              v-model="inputLat"
-              placeholder="Latitude"
-              v-on:keyup.enter="$event.target.blur(); get('coords')"
-              v-bind:class="{'form-control is-invalid': inputCoordsError}"
+                v-model="inputLat"
+                placeholder="Latitude"
+                v-on:keyup.enter="$event.target.blur(); get('coords')"
+                v-bind:class="{'form-control is-invalid': inputCoordsError}"
               />
               <input
-              v-model="inputLon"
-              placeholder="Longitude"
-              v-on:keyup.enter="$event.target.blur(); get('coords')"
-              v-bind:class="{'form-control is-invalid': inputCoordsError}"
+                v-model="inputLon"
+                placeholder="Longitude"
+                v-on:keyup.enter="$event.target.blur(); get('coords')"
+                v-bind:class="{'form-control is-invalid': inputCoordsError}"
               />
               <div><small class="text-danger">{{ textDangerInputCoords }}</small></div>
               <button @click="$event.target.blur(); get('coords')">Search</button>
@@ -100,7 +100,6 @@
 <script>
 import service from '../js/service'
 import lodash from '../js/lodash'
-
 export default {
   name: 'ComponentPollution',
   data () {
@@ -232,9 +231,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 @import '../scss/custom.scss';
-
 input {
   width: 90%;
   height: 40px;
@@ -248,7 +245,6 @@ input {
   margin-top: 15px;
   margin-bottom: 15px;
 }
-
 button {
   border: 1px solid #000;
   background-color: #4b4b4bd0;
@@ -263,12 +259,10 @@ button {
   margin-top: 15px;
   border-radius: 10px;
 }
-
 button:hover {
   transition: box-shadow 0.2s;
   box-shadow: 0 0 3px #000;
 }
-
 .div-main {
   width: 65vw;
   max-width: 600px;
@@ -278,7 +272,6 @@ button:hover {
   box-shadow: 0 0 10px #000;
   background-color: rgba(243, 243, 243, 0.85);
 }
-
 .div-style {
   width: 100%;
   margin: auto;
@@ -294,21 +287,17 @@ button:hover {
   background-color: rgba(255, 255, 255, 0.4);
   font-family: Fraunces,monospace;
 }
-
 .div-style:hover {
   transition: box-shadow 0.7s;
   box-shadow: 0 0 10px rgb(77, 77, 77);
 }
-
 .title-search {
   margin-bottom: 15px;
   font-size: 25px;
 }
-
 .tab-title-class {
   color: red;
 }
-
 @media screen and (max-width: 500px) {
   button, input {
     font-size: 4vw;
@@ -320,5 +309,4 @@ button:hover {
     font-size: 4vw;
   }
 }
-
 </style>
