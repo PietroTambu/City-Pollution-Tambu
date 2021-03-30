@@ -267,6 +267,8 @@ button:hover {
   width: 65vw;
   max-width: 600px;
   margin: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
   border: 2px black solid;
   border-radius: 15px;
   box-shadow: 0 0 10px #000;

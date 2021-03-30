@@ -5,7 +5,7 @@
       <b-collapse is-nav id="nav_collapse" class="mx-auto">
         <b-navbar-nav class="mx-auto">
           <b-nav-item to="/">Home</b-nav-item>
-          <b-nav-item to="/about">about</b-nav-item>
+          <b-nav-item to="/about">About</b-nav-item>
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
