@@ -67,10 +67,8 @@ export default {
 <style lang="scss" scoped>
 
 .div-main {
-  max-width: 550px;
-  margin: auto;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  max-width: 700px;
+  margin: 30px auto;
   border: 2px black solid;
   border-radius: 15px;
   box-shadow: 0 0 10px #000;

@@ -2,12 +2,12 @@
   <div class="div-main">
     <b-overlay :show="showMain" rounded="sm" variant="secondary" opacity="0.85" blur="2px">
       <b-overlay :show="showInput" rounded="sm" variant="secondary" opacity="0.85" blur="2px">
-        <hr>
-        <div>
-          <h2 class="PottaOne gray-2">Discover Air Pollution</h2>
-          <h5 class="Fraunces gray-3">select the search mode</h5>
+        <div class="title">
+          <h1 class="PottaOne gray-2">City Air Pollution</h1>
+          <hr>
+          <h6 class="Fraunces gray-3">Discover Air Quality Index around the world.</h6>
+          <h6 class="Fraunces gray-3">Use one of the following search methods</h6>
         </div>
-        <hr>
         <b-tabs v-model="tabIndexInputType" pills card fill>
           <b-tab title="City name" :title-link-class="linkClassInputType(0)" active>
             <div class="div-style">
@@ -271,7 +271,7 @@ input {
 }
 button {
   border: 1px solid #000;
-  background-color: #4b4b4bd0;
+  background-color: $gray;
   color: rgb(255, 255, 255);
   padding: 0;
   max-width: 120px;
@@ -298,6 +298,11 @@ button:hover {
 }
 .gray-3 {
   color: #7c7c7c;
+}
+.title {
+  width: fit-content;
+  margin: 2vw auto;
+  padding: 1vw;
 }
 .div-main {
   width: 65vw;
