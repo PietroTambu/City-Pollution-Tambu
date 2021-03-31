@@ -9,6 +9,7 @@ $yellow:  #ffc107 !default;
 $green:   #28a745 !default;
 $teal:    #20c997 !default;
 $cyan:    #17a2b8 !default;
+$gray:    #858b92 !default;
 
 $theme-colors:(
         "AQI_Good": $green,
@@ -17,7 +18,7 @@ $theme-colors:(
         "AQI_Unhealthy": $red,
         "AQI_Very_Unhealthy": $purple,
         "AQI_Hazardous": $porpora,
-        "yellow": $yellow
+        "gray": $gray
 );
 
 @import "../../node_modules/bootstrap/scss/bootstrap";

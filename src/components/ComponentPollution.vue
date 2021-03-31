@@ -2,6 +2,12 @@
   <div class="div-main">
     <b-overlay :show="showMain" rounded="sm" variant="secondary" opacity="0.85" blur="2px">
       <b-overlay :show="showInput" rounded="sm" variant="secondary" opacity="0.85" blur="2px">
+        <hr>
+        <div>
+          <h2 class="PottaOne gray-2">Discover Air Pollution</h2>
+          <h5 class="Fraunces gray-3">select the search mode</h5>
+        </div>
+        <hr>
         <b-tabs v-model="tabIndexInputType" pills card fill>
           <b-tab title="City name" :title-link-class="linkClassInputType(0)" active>
             <div class="div-style">
@@ -98,6 +104,7 @@
 </template>
 
 <script>
+import $ from 'jquery'
 import service from '../js/service'
 import lodash from '../js/lodash'
 export default {
@@ -106,6 +113,7 @@ export default {
     return {
       Data: {},
       aqi: '-',
+      aqi_color: '#6c757d',
       longName: '',
       name: 'Location: -',
       lat: '',
@@ -115,6 +123,7 @@ export default {
       inputLon: '',
       tabIndexInputType: 0,
       tabIndexInfo: 0,
+      tabIndexMain: 0,
       showMain: true,
       showInput: false,
       inputCityError: false,
@@ -203,21 +212,35 @@ export default {
         this.name = this.longName.substr(0, this.longName.indexOf(','))
         if (this.name === '') { this.name = this.data.longName }
         this.aqi = this.data.aqi
+        if (this.aqi > 300) {
+          this.aqi_color = '#75151e'
+        } else if (this.aqi > 200) {
+          this.aqi_color = '#6f42c1'
+        } else if (this.aqi > 150) {
+          this.aqi_color = '#dc3545'
+        } else if (this.aqi > 100) {
+          this.aqi_color = '#fd7e14'
+        } else if (this.aqi > 50) {
+          this.aqi_color = '#ffc107'
+        } else if (this.aqi <= 50) {
+          this.aqi_color = '#28a745'
+        }
         console.log(this.data)
       }
     },
     linkClassInputType (idx) {
       if (this.tabIndexInputType === idx) {
-        return ['bg-secondary', 'text-light', 'font-weight-bold']
+        return ['bg-gray', 'text-light', 'font-weight-bold', 'border', 'border-dark']
       } else {
-        return ['bg-light', 'text-dark']
+        return ['bg-light', 'text-dark', 'border', 'border-secondary']
       }
     },
     linkClassInfo (idx) {
       if (this.tabIndexInfo === idx) {
-        return ['bg-secondary', 'text-light', 'font-weight-bold']
+        $('.div-main').css({ border: '2px solid ' + this.aqi_color })
+        return ['bg-gray', 'text-light', 'font-weight-bold', 'border', 'border-secondary']
       } else {
-        return ['bg-light', 'text-dark']
+        return ['bg-light', 'text-dark', 'border', 'border-secondary']
       }
     }
   },
@@ -232,6 +255,7 @@ export default {
 
 <style lang="scss" scoped>
 @import '../scss/custom.scss';
+
 input {
   width: 90%;
   height: 40px;
@@ -252,8 +276,8 @@ button {
   padding: 0;
   max-width: 120px;
   max-height: 40px;
-  width: 15vw;
-  height: 7vw;
+  width: 20vw;
+  height: 10vw;
   font-size: 20px;
   transition: box-shadow 0.2s;
   margin-top: 15px;
@@ -263,13 +287,25 @@ button:hover {
   transition: box-shadow 0.2s;
   box-shadow: 0 0 3px #000;
 }
+.PottaOne {
+  font-family: PottaOne;
+}
+.Fraunces {
+  font-family: Fraunces;
+}
+.gray-2 {
+  color: #484848;
+}
+.gray-3 {
+  color: #7c7c7c;
+}
 .div-main {
   width: 65vw;
   max-width: 600px;
   margin: auto;
   margin-top: 30px;
   margin-bottom: 30px;
-  border: 2px black solid;
+  border: 2px solid black;
   border-radius: 15px;
   box-shadow: 0 0 10px #000;
   background-color: rgba(243, 243, 243, 0.85);
@@ -296,9 +332,6 @@ button:hover {
 .title-search {
   margin-bottom: 15px;
   font-size: 25px;
-}
-.tab-title-class {
-  color: red;
 }
 @media screen and (max-width: 500px) {
   button, input {
