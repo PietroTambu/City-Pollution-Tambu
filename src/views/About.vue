@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <div>
     <b-overlay :show="showMain" rounded="sm" variant="secondary" opacity="0.85" blur="2px" style="width: fit-content; margin: auto">
       <div class="div-main">
         <h2>City Pollution Tambu</h2>
@@ -81,6 +81,7 @@ h3 {
 }
 h2 {
   font-family: PottaOne;
+  color: #343434;
 }
 p,a,b {
   font-family: "Fraunces";

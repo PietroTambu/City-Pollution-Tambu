@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <ComponentPollution class="input"/>
+    <ComponentPollution />
   </div>
 </template>
 
@@ -15,8 +15,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 .input {
-  margin-top: 30px;
-  width: 100%;
+  margin: auto;
+  width: fit-content;
 }
 </style>

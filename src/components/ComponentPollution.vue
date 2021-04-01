@@ -1,103 +1,105 @@
 <template>
-  <div class="div-main">
-    <b-overlay :show="showMain" rounded="sm" variant="secondary" opacity="0.85" blur="2px">
-      <b-overlay :show="showInput" rounded="sm" variant="secondary" opacity="0.85" blur="2px">
-        <div class="title">
-          <h1 class="PottaOne gray-2">City Air Pollution</h1>
-          <hr>
-          <h6 class="Fraunces gray-3">Discover Air Quality Index around the world.</h6>
-          <h6 class="Fraunces gray-3">Use one of the following search methods</h6>
+  <div style="margin: auto">
+    <b-overlay :show="showMain" rounded="sm" variant="secondary" opacity="0.85" blur="2px" style="width: fit-content; margin: auto">
+      <div class="div-main">
+        <b-overlay :show="showInput" rounded="sm" variant="secondary" opacity="0.85" blur="2px">
+          <div class="title">
+            <h1 class="PottaOne gray-1">City Air Pollution</h1>
+            <hr>
+            <h6 class="Fraunces gray-3">Discover Air Quality Index around the world.</h6>
+            <h6 class="Fraunces gray-3">Use one of the following search methods</h6>
+          </div>
+          <b-tabs v-model="tabIndexInputType" pills card fill>
+            <b-tab title="City name" :title-link-class="linkClassInputType(0)" active>
+              <div class="div-style">
+                <h3 class="title-search">Insert name of the city:</h3>
+                <input
+                  v-model="inputCity"
+                  placeholder="insert city name"
+                  v-on:keyup.enter="$event.target.blur(); get('city')"
+                  v-bind:class="{'form-control is-invalid': inputCityError}"
+                />
+                <small class="text-danger">{{ textDangerInputCity }}</small>
+                <div><button @click="$event.target.blur(); get('city')">Search</button></div>
+              </div>
+            </b-tab>
+            <b-tab title="Geo-coordinates" :title-link-class="linkClassInputType(1)">
+              <div class="div-style">
+                <h3 class="title-search">Insert geo-coordinates:</h3>
+                <input
+                  v-model="inputLat"
+                  placeholder="Latitude"
+                  v-on:keyup.enter="$event.target.blur(); get('coords')"
+                  v-bind:class="{'form-control is-invalid': inputCoordsError}"
+                />
+                <input
+                  v-model="inputLon"
+                  placeholder="Longitude"
+                  v-on:keyup.enter="$event.target.blur(); get('coords')"
+                  v-bind:class="{'form-control is-invalid': inputCoordsError}"
+                />
+                <div><small class="text-danger">{{ textDangerInputCoords }}</small></div>
+                <button @click="$event.target.blur(); get('coords')">Search</button>
+              </div>
+            </b-tab>
+            <b-tab title="GPS location" :title-link-class="linkClassInputType(2)">
+              <div class="div-style">
+                <h3 class="title-search">Get AQI from your GPS position:</h3>
+                <button @click="get('gps')">Search</button>
+              </div>
+            </b-tab>
+            <b-tab title="IP location" :title-link-class="linkClassInputType(3)">
+              <div class="div-style">
+                <h3 class="title-search">Get AQI from your IP position:</h3>
+                <button @click="get('here')">Search</button>
+              </div>
+            </b-tab>
+          </b-tabs>
+        </b-overlay>
+        <div>
+          <b-tabs v-model="tabIndexInfo" pills card fill>
+            <b-tab :title="'AQI: ' + aqi" :title-link-class="linkClassInfo(0)" active>
+              <b-card bg-variant="AQI_Hazardous" text-variant="white" header="Hazardous" class="text-center" v-if=" aqi > 300">
+                <p class="card-text font-weight-bold">AQI: {{ aqi }}</p>
+                <p class="card-text">{{ name }}</p>
+                <p class="card-text">Health alert: everyone may experience more serious health effects</p>
+              </b-card>
+              <b-card bg-variant="AQI_Very_Unhealthy" text-variant="white" header="Very Unhealthy" class="text-center" v-else-if=" aqi > 200">
+                <p class="card-text font-weight-bold">AQI: {{ aqi }}</p>
+                <p class="card-text">{{ name }}</p>
+                <p class="card-text">Health warnings of emergency conditions. The entire population is more likely to be affected</p>
+              </b-card>
+              <b-card bg-variant="AQI_Unhealthy" text-variant="white" header="Unhealthy" class="text-center" v-else-if=" aqi > 150">
+                <p class="card-text font-weight-bold">AQI: {{ aqi }}</p>
+                <p class="card-text">{{ name }}</p>
+                <p class="card-text">Everyone may begin to experience health effects; members of sensitive groups may experience more serious health effects</p>
+              </b-card>
+              <b-card bg-variant="AQI_Unhealthy_Sensitive" text-variant="white" header="Unhealthy for Sensitive Groups" class="text-center" v-else-if=" aqi > 100">
+                <p class="card-text font-weight-bold">AQI: {{ aqi }}</p>
+                <p class="card-text">{{ name }}</p>
+                <p class="card-text">Members of sensitive groups may experience health effects. The general public is not likely to be affected.</p>
+              </b-card>
+              <b-card bg-variant="AQI_Moderate" text-variant="white" header="Moderate" class="text-center" v-else-if=" aqi > 50">
+                <p class="card-text font-weight-bold">AQI: {{ aqi }}</p>
+                <p class="card-text">{{ name }}</p>
+                <p class="card-text">Air quality is acceptable; however, for some pollutants there may be a moderate health concern for a very small number of people who are unusually sensitive to air pollution.</p>
+              </b-card>
+              <b-card bg-variant="AQI_Good" text-variant="white" header="Good" class="text-center" v-else-if=" aqi <= 50">
+                <p class="card-text font-weight-bold">AQI: {{ aqi }}</p>
+                <p class="card-text">{{ name }}</p>
+                <p class="card-text">Air quality is considered satisfactory, and air pollution poses little or no risk</p>
+              </b-card>
+            </b-tab>
+            <b-tab :title="name + ' (info)'" :title-link-class="linkClassInfo(1)">
+              <b-card bg-variant="secondary" text-variant="light" header="Information:">
+                <p class="card-text">{{ longName }}</p>
+                <p class="card-text font-weight-bold">Coordinates:</p>
+                <p class="card-text">Latitude: {{ lat }}</p>
+                <p class="card-text">Longitude: {{ lon }}</p>
+              </b-card>
+            </b-tab>
+          </b-tabs>
         </div>
-        <b-tabs v-model="tabIndexInputType" pills card fill>
-          <b-tab title="City name" :title-link-class="linkClassInputType(0)" active>
-            <div class="div-style">
-              <h3 class="title-search">Insert name of the city:</h3>
-              <input
-                v-model="inputCity"
-                placeholder="insert city name"
-                v-on:keyup.enter="$event.target.blur(); get('city')"
-                v-bind:class="{'form-control is-invalid': inputCityError}"
-              />
-              <small class="text-danger">{{ textDangerInputCity }}</small>
-              <div><button @click="$event.target.blur(); get('city')">Search</button></div>
-            </div>
-          </b-tab>
-          <b-tab title="Geo-coordinates" :title-link-class="linkClassInputType(1)">
-            <div class="div-style">
-              <h3 class="title-search">Insert geo-coordinates:</h3>
-              <input
-                v-model="inputLat"
-                placeholder="Latitude"
-                v-on:keyup.enter="$event.target.blur(); get('coords')"
-                v-bind:class="{'form-control is-invalid': inputCoordsError}"
-              />
-              <input
-                v-model="inputLon"
-                placeholder="Longitude"
-                v-on:keyup.enter="$event.target.blur(); get('coords')"
-                v-bind:class="{'form-control is-invalid': inputCoordsError}"
-              />
-              <div><small class="text-danger">{{ textDangerInputCoords }}</small></div>
-              <button @click="$event.target.blur(); get('coords')">Search</button>
-            </div>
-          </b-tab>
-          <b-tab title="GPS location" :title-link-class="linkClassInputType(2)">
-            <div class="div-style">
-              <h3 class="title-search">Get AQI from your GPS position:</h3>
-              <button @click="get('gps')">Search</button>
-            </div>
-          </b-tab>
-          <b-tab title="IP location" :title-link-class="linkClassInputType(3)">
-            <div class="div-style">
-              <h3 class="title-search">Get AQI from your IP position:</h3>
-              <button @click="get('here')">Search</button>
-            </div>
-          </b-tab>
-        </b-tabs>
-      </b-overlay>
-      <div>
-        <b-tabs v-model="tabIndexInfo" pills card fill>
-          <b-tab :title="'AQI: ' + aqi" :title-link-class="linkClassInfo(0)" active>
-            <b-card bg-variant="AQI_Hazardous" text-variant="white" header="Hazardous" class="text-center" v-if=" aqi > 300">
-              <p class="card-text font-weight-bold">AQI: {{ aqi }}</p>
-              <p class="card-text">{{ name }}</p>
-              <p class="card-text">Health alert: everyone may experience more serious health effects</p>
-            </b-card>
-            <b-card bg-variant="AQI_Very_Unhealthy" text-variant="white" header="Very Unhealthy" class="text-center" v-else-if=" aqi > 200">
-              <p class="card-text font-weight-bold">AQI: {{ aqi }}</p>
-              <p class="card-text">{{ name }}</p>
-              <p class="card-text">Health warnings of emergency conditions. The entire population is more likely to be affected</p>
-            </b-card>
-            <b-card bg-variant="AQI_Unhealthy" text-variant="white" header="Unhealthy" class="text-center" v-else-if=" aqi > 150">
-              <p class="card-text font-weight-bold">AQI: {{ aqi }}</p>
-              <p class="card-text">{{ name }}</p>
-              <p class="card-text">Everyone may begin to experience health effects; members of sensitive groups may experience more serious health effects</p>
-            </b-card>
-            <b-card bg-variant="AQI_Unhealthy_Sensitive" text-variant="white" header="Unhealthy for Sensitive Groups" class="text-center" v-else-if=" aqi > 100">
-              <p class="card-text font-weight-bold">AQI: {{ aqi }}</p>
-              <p class="card-text">{{ name }}</p>
-              <p class="card-text">Members of sensitive groups may experience health effects. The general public is not likely to be affected.</p>
-            </b-card>
-            <b-card bg-variant="AQI_Moderate" text-variant="white" header="Moderate" class="text-center" v-else-if=" aqi > 50">
-              <p class="card-text font-weight-bold">AQI: {{ aqi }}</p>
-              <p class="card-text">{{ name }}</p>
-              <p class="card-text">Air quality is acceptable; however, for some pollutants there may be a moderate health concern for a very small number of people who are unusually sensitive to air pollution.</p>
-            </b-card>
-            <b-card bg-variant="AQI_Good" text-variant="white" header="Good" class="text-center" v-else-if=" aqi <= 50">
-              <p class="card-text font-weight-bold">AQI: {{ aqi }}</p>
-              <p class="card-text">{{ name }}</p>
-              <p class="card-text">Air quality is considered satisfactory, and air pollution poses little or no risk</p>
-            </b-card>
-          </b-tab>
-          <b-tab :title="name + ' (info)'" :title-link-class="linkClassInfo(1)">
-            <b-card bg-variant="secondary" text-variant="light" header="Information:">
-              <p class="card-text">{{ longName }}</p>
-              <p class="card-text font-weight-bold">Coordinates:</p>
-              <p class="card-text">Latitude: {{ lat }}</p>
-              <p class="card-text">Longitude: {{ lon }}</p>
-            </b-card>
-          </b-tab>
-        </b-tabs>
       </div>
     </b-overlay>
   </div>
@@ -269,6 +271,7 @@ input {
   margin-top: 15px;
   margin-bottom: 15px;
 }
+
 button {
   border: 1px solid #000;
   background-color: $gray;
@@ -293,6 +296,9 @@ button:hover {
 .Fraunces {
   font-family: Fraunces;
 }
+.gray-1 {
+  color: #343434;
+}
 .gray-2 {
   color: #484848;
 }
@@ -301,15 +307,15 @@ button:hover {
 }
 .title {
   width: fit-content;
-  margin: 2vw auto;
-  padding: 1vw;
+  margin: auto;
+  margin-top: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 .div-main {
-  width: 65vw;
-  max-width: 600px;
-  margin: auto;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  max-width: 650px;
+  width: 85vw;
+  margin: 30px auto;
   border: 2px solid black;
   border-radius: 15px;
   box-shadow: 0 0 10px #000;
