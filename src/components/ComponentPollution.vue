@@ -314,7 +314,7 @@ button:hover {
 }
 .div-main {
   max-width: 650px;
-  width: 85vw;
+  width: max-content;
   margin: 30px auto;
   border: 2px solid black;
   border-radius: 15px;
