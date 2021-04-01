@@ -346,13 +346,16 @@ button:hover {
 }
 @media screen and (max-width: 500px) {
   button, input {
-    font-size: 4vw;
+    font-size: 5vw;
   }
   .aqi {
-    font-size: 3vw;
+    font-size: 4vw;
   }
   .title-search {
-    font-size: 4vw;
+    font-size: 5vw;
+  }
+  h6 {
+    font-size: 3vw;
   }
 }
 </style>
