@@ -8,6 +8,13 @@
         </div>
         <hr>
         <h5 class="Fraunces gray-3">On this website you will be able to find out the AQI, "Air Quality Index", of most cities around the world.</h5>
+        <h4>Scegli tra le 4 differenti tipologie di ricerca:</h4>
+        <b-list-group style="width: fit-content; margin: auto">
+          <b-list-group-item @click="set_search_type_preference('city')" variant="secondary" button><h5>Tramite nome della città / comune</h5></b-list-group-item>
+          <b-list-group-item @click="set_search_type_preference('coords')" button><h5>Tramite le coordinate decimali</h5></b-list-group-item>
+          <b-list-group-item @click="set_search_type_preference('gps')" button><h5>Tramite la posizione GPS del tuo dispositivo</h5></b-list-group-item>
+          <b-list-group-item @click="set_search_type_preference('ip')" button><h5>Tramite la posizione IP del tuo dispositivo</h5></b-list-group-item>
+        </b-list-group>
       </div>
     </b-overlay>
   </div>
@@ -15,6 +22,7 @@
 
 <script>
 // import $ from 'jquery'
+import router from '@/router'
 
 export default {
   name: 'ComponentGuide',
@@ -23,7 +31,20 @@ export default {
       showMain: true
     }
   },
-  methods: {},
+  methods: {
+    set_search_type_preference (parameter) {
+      if (parameter === 'city') {
+        this.$store.commit('change_search_type_preference_city')
+      } else if (parameter === 'coords') {
+        this.$store.commit('change_search_type_preference_coords')
+      } else if (parameter === 'gps') {
+        this.$store.commit('change_search_type_preference_gps')
+      } else if (parameter === 'ip') {
+        this.$store.commit('change_search_type_preference_ip')
+      }
+      router.push('/')
+    }
+  },
   mounted () {
     setTimeout(
       () => {
@@ -52,8 +73,7 @@ export default {
   margin: 2vw auto;
 }
 .div-main {
-  width: 75vw;
-  max-width: 800px;
+  max-width: 700px;
   margin: 30px auto;
   padding-left: 1vw;
   padding-right: 2vw;

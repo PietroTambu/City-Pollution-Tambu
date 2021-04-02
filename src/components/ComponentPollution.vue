@@ -10,7 +10,7 @@
             <h6 class="Fraunces gray-3">Use one of the following search methods</h6>
           </div>
           <b-tabs v-model="tabIndexInputType" pills card fill>
-            <b-tab title="City name" :title-link-class="linkClassInputType(0)" active>
+            <b-tab title="City name" @click="update_search_type_preference('city')" :title-link-class="linkClassInputType(0)" :active="active_city">
               <div class="div-style">
                 <h3 class="title-search">Insert name of the city:</h3>
                 <input
@@ -23,7 +23,7 @@
                 <div><button @click="$event.target.blur(); get('city')">Search</button></div>
               </div>
             </b-tab>
-            <b-tab title="Geo-coordinates" :title-link-class="linkClassInputType(1)">
+            <b-tab title="Geo-coordinates" @click="update_search_type_preference('coords')" :title-link-class="linkClassInputType(1)" :active="active_coords">
               <div class="div-style">
                 <h3 class="title-search">Insert geo-coordinates:</h3>
                 <input
@@ -42,13 +42,13 @@
                 <button @click="$event.target.blur(); get('coords')">Search</button>
               </div>
             </b-tab>
-            <b-tab title="GPS location" :title-link-class="linkClassInputType(2)">
+            <b-tab title="GPS location" @click="update_search_type_preference('gps')" :title-link-class="linkClassInputType(2)" :active="active_gps">
               <div class="div-style">
                 <h3 class="title-search">Get AQI from your GPS position:</h3>
                 <button @click="get('gps')">Search</button>
               </div>
             </b-tab>
-            <b-tab title="IP location" :title-link-class="linkClassInputType(3)">
+            <b-tab title="IP location" @click="update_search_type_preference('ip')" :title-link-class="linkClassInputType(3)" :active="active_ip">
               <div class="div-style">
                 <h3 class="title-search">Get AQI from your IP position:</h3>
                 <button @click="get('here')">Search</button>
@@ -109,6 +109,7 @@
 import $ from 'jquery'
 import service from '../js/service'
 import lodash from '../js/lodash'
+
 export default {
   name: 'ComponentPollution',
   data () {
@@ -131,7 +132,11 @@ export default {
       inputCityError: false,
       inputCoordsError: false,
       textDangerInputCity: '',
-      textDangerInputCoords: ''
+      textDangerInputCoords: '',
+      active_city: this.$store.state.active_city,
+      active_coords: this.$store.state.active_coords,
+      active_gps: this.$store.state.active_gps,
+      active_ip: this.$store.state.active_ip
     }
   },
   methods: {
@@ -244,6 +249,17 @@ export default {
       } else {
         return ['bg-light', 'text-dark', 'border', 'border-secondary']
       }
+    },
+    update_search_type_preference (para) {
+      if (para === 'city') {
+        this.$store.commit('change_search_type_preference_city')
+      } else if (para === 'coords') {
+        this.$store.commit('change_search_type_preference_coords')
+      } else if (para === 'gps') {
+        this.$store.commit('change_search_type_preference_gps')
+      } else if (para === 'ip') {
+        this.$store.commit('change_search_type_preference_ip')
+      }
     }
   },
   mounted () {
@@ -314,7 +330,7 @@ button:hover {
 }
 .div-main {
   max-width: 650px;
-  width: max-content;
+  width: 650px;
   margin: 30px auto;
   border: 2px solid black;
   border-radius: 15px;
@@ -327,10 +343,7 @@ button:hover {
   border: 1px rgb(141, 141, 141) solid;
   border-radius: 10px;
   text-align: center;
-  padding-right: 5vw;
-  padding-left: 5vw;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding: 3rem 5vw;
   box-shadow: 0 0 5px rgb(54, 54, 54);
   transition: box-shadow 0.3s;
   background-color: rgba(255, 255, 255, 0.4);
@@ -356,6 +369,11 @@ button:hover {
   }
   h6 {
     font-size: 3vw;
+  }
+}
+@media screen and (max-width: 770px) {
+  .div-main {
+    width: fit-content;
   }
 }
 </style>
