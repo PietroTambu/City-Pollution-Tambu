@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <b-overlay :show="showMain" rounded="sm" variant="secondary" opacity="0.85" blur="2px" style="width: fit-content; margin: auto">
+  <div style="width: fit-content; margin: auto">
+    <b-overlay :show="showMain" rounded="sm" variant="secondary" opacity="0.85" blur="2px" style="width: -moz-fit-content; margin: auto">
       <div class="div-main">
         <h2>City Pollution Tambu</h2>
         <img src="../assets/favicon.png" alt="logo" width="150" height="150" style="margin: 10px">
@@ -66,8 +66,12 @@ export default {
 
 <style lang="scss" scoped>
 
+.b-table {
+  margin: auto;
+}
+
 .div-main {
-  max-width: 700px;
+  max-width: 600px;
   margin: 30px auto;
   border: 2px black solid;
   border-radius: 15px;

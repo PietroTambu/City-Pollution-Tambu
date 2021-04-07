@@ -1,6 +1,6 @@
 <template>
-  <div style="margin: auto">
-    <b-overlay :show="showMain" rounded="sm" variant="secondary" opacity="0.85" blur="2px" style="width: fit-content; margin: auto">
+  <div style="width: fit-content; margin: auto">
+    <b-overlay :show="showMain" rounded="sm" variant="secondary" opacity="0.85" blur="2px" style="width: -moz-fit-content; margin: auto">
       <div class="div-main">
         <b-overlay :show="showInput" rounded="sm" variant="secondary" opacity="0.85" blur="2px">
           <div class="title">

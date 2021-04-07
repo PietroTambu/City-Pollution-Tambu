@@ -1,6 +1,6 @@
 <template>
   <div style="width: fit-content; margin: auto">
-    <b-overlay :show="showMain" rounded="sm" variant="secondary" opacity="0.85" blur="2px">
+    <b-overlay :show="showMain" rounded="sm" variant="secondary" opacity="0.85" blur="2px" style="width: -moz-fit-content; margin: auto">
       <div class="div-main">
         <div class="header">
           <h1 class="PottaOne gray-2">Guide Page</h1>
