@@ -42,9 +42,9 @@ export default {
       ],
       items: [
         { name: { name: 'Google Firebase', url: 'https://firebase.google.com/' }, utility: 'Hosting Service Provider', icon: '../assets/firebase.png', _rowVariant: 'light' },
-        { name: { name: 'Stack Overflow', url: 'https://stackoverflow.com/' }, utility: 'Learn Knowledge', icon: '../assets/stackoverflow.png', _rowVariant: 'light' },
+        { name: { name: 'Stack Overflow', url: 'https://stackoverflow.com/' }, utility: 'Learn Knowledge', icon: '../assets/stackoverflow.png', _rowVariant: 'table-gray' },
         { name: { name: 'Vue.js Framework', url: 'https://vuejs.org/' }, utility: 'JavaScript Framework', icon: '../assets/vue-js.png', _rowVariant: 'light' },
-        { name: { name: 'Webstorm for education', url: 'https://www.jetbrains.com/webstorm/' }, utility: 'JavaScript IDE', icon: '../assets/webstorm-icon.png', _rowVariant: 'light' },
+        { name: { name: 'Webstorm for education', url: 'https://www.jetbrains.com/webstorm/' }, utility: 'JavaScript IDE', icon: '../assets/webstorm-icon.png', _rowVariant: 'table-gray' },
         { name: { name: 'World Air Quality Index', url: 'https://aqicn.org/map/world/' }, utility: 'Data Provider', icon: '../assets/aqicn-logo.png', _rowVariant: 'light' }
       ],
       tableVariants: ['primary', 'secondary', 'info', 'danger', 'warning', 'success', 'light', 'dark'],

@@ -8,13 +8,23 @@
         </div>
         <hr>
         <h5 class="Fraunces gray-3">On this website you will be able to find out the AQI, "Air Quality Index", of most cities around the world.</h5>
-        <h4>Scegli tra le 4 differenti tipologie di ricerca:</h4>
-        <b-list-group style="width: fit-content; margin: auto">
-          <b-list-group-item @click="set_search_type_preference('city')" variant="secondary" button><h5>Tramite nome della città / comune</h5></b-list-group-item>
-          <b-list-group-item @click="set_search_type_preference('coords')" button><h5>Tramite le coordinate decimali</h5></b-list-group-item>
-          <b-list-group-item @click="set_search_type_preference('gps')" button><h5>Tramite la posizione GPS del tuo dispositivo</h5></b-list-group-item>
-          <b-list-group-item @click="set_search_type_preference('ip')" button><h5>Tramite la posizione IP del tuo dispositivo</h5></b-list-group-item>
-        </b-list-group>
+        <hr>
+        <h4 class="PottaOne gray-2">Choose from the 4 different types of research:</h4>
+        <table class="b-table" style="margin: auto">
+          <b-table small :fields="fields" :items="items" responsive="sm" :bordered="bordered" :dark="dark">
+            <template #cell(name)="data">
+              <b class="gray-2" style="font-size: 20px">{{ data.value }}</b>
+            </template>
+            <template #cell(description)="data">
+              <b class="gray-2">{{ data.value }}</b>
+            </template>
+            <template #cell(button)="data">
+              <b-button variant="light-gray" class="border border-dark" @click="set_search_type_preference(data.value.url)">
+                <b-icon-arrow-right></b-icon-arrow-right>
+              </b-button>
+            </template>
+          </b-table>
+        </table>
       </div>
     </b-overlay>
   </div>
@@ -28,6 +38,20 @@ export default {
   name: 'ComponentGuide',
   data () {
     return {
+      fields: [
+        { key: 'name', tdClass: 'align-middle' },
+        { key: 'description', tdClass: 'align-middle' },
+        { key: 'button', tdClass: 'align-middle' }
+      ],
+      items: [
+        { name: 'By city name', description: 'Nella modalità City Name basterà inserire nell\'apposito campo di input il nome di una città o di un comune.', button: { name: 'Search', url: 'city' }, _rowVariant: 'light' },
+        { name: 'By Geo-coordinates', description: 'Nella modalità Geo-coordinates bisogna inserire nelle due caselle di input la latitudine e longitude in valori decimali', button: { name: 'Search', url: 'coords' }, _rowVariant: 'light' },
+        { name: 'By GPS location', description: 'Nella modalità GPS ', button: { name: 'Search', url: 'gps' }, _rowVariant: 'light' },
+        { name: 'By IP location', description: '', button: { name: 'Search', url: 'ip' }, _rowVariant: 'light' }
+      ],
+      tableVariants: ['primary', 'secondary', 'info', 'danger', 'warning', 'success', 'light', 'dark'],
+      dark: true,
+      bordered: true,
       showMain: true
     }
   },

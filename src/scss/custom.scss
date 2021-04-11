@@ -1,15 +1,17 @@
-$blue:    #007bff !default;
-$indigo:  #6610f2 !default;
-$purple:  #6f42c1 !default;
-$pink:    #e83e8c !default;
-$red:     #dc3545 !default;
-$porpora: #75151e !default;
-$orange:  #fd7e14 !default;
-$yellow:  #ffc107 !default;
-$green:   #28a745 !default;
-$teal:    #20c997 !default;
-$cyan:    #17a2b8 !default;
-$gray:    #858b92 !default;
+$blue:        #007bff !default;
+$indigo:      #6610f2 !default;
+$purple:      #6f42c1 !default;
+$pink:        #e83e8c !default;
+$red:         #dc3545 !default;
+$porpora:     #75151e !default;
+$orange:      #fd7e14 !default;
+$yellow:      #ffc107 !default;
+$green:       #28a745 !default;
+$teal:        #20c997 !default;
+$cyan:        #17a2b8 !default;
+$gray:        #858b92 !default;
+$light-gray:  #aeb1b4 !default;
+$table-gray:  #eaeaea !default;
 
 $theme-colors:(
         "AQI_Good": $green,
@@ -18,7 +20,10 @@ $theme-colors:(
         "AQI_Unhealthy": $red,
         "AQI_Very_Unhealthy": $purple,
         "AQI_Hazardous": $porpora,
-        "gray": $gray
+        "gray": $gray,
+        "light-gray": $light-gray,
+        "orange": $orange,
+        "table-gray": $table-gray
 );
 
 @import "../../node_modules/bootstrap/scss/bootstrap";
