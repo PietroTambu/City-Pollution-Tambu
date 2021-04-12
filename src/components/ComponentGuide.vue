@@ -253,8 +253,8 @@ export default {
         { value: '0 - 50', condition: { nameEng: 'Good', nameIta: 'Buono' }, _rowVariant: 'AQI_Good' },
         { value: '51 - 100', condition: { nameEng: 'Moderate', nameIta: 'Moderato' }, _rowVariant: 'AQI_Moderate' },
         { value: '101 - 150', condition: { nameEng: 'Unhealthy for sensitive Groups', nameIta: 'Insalubre per gruppi sensibili' }, _rowVariant: 'AQI_Unhealthy_Sensitive' },
-        { value: '151 - 200', condition: { nameEng: 'Unhealthy', nameIta: 'Nocivo' }, _rowVariant: 'AQI_Unhealthy' },
-        { value: '201 - 300', condition: { nameEng: 'Very Unhealthy', nameIta: 'Molto nocivo' }, _rowVariant: 'AQI_Very_Unhealthy' },
+        { value: '151 - 200', condition: { nameEng: 'Unhealthy', nameIta: 'Insalubre' }, _rowVariant: 'AQI_Unhealthy' },
+        { value: '201 - 300', condition: { nameEng: 'Very Unhealthy', nameIta: 'Molto insalubre' }, _rowVariant: 'AQI_Very_Unhealthy' },
         { value: '301 - 500', condition: { nameEng: 'Hazardous', nameIta: 'Pericoloso' }, _rowVariant: 'AQI_Hazardous' }
       ],
       dark: true,
