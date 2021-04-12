@@ -20,17 +20,17 @@
               <b-card-text class="font-weight-bold">Nome della città</b-card-text>
               <hr>
               <b-card-text>
-                Questa modalità di ricerca permette di ricavare l'indice di qualità dell'aria inserendo all'interno del singolo campo di input il nome della città o del comune in lingua originaria oppure in lingua inglese. ( milano - milan ).
+                Questa modalità di ricerca permette di ricavare l'indice di qualità dell'aria inserendo all'interno del singolo campo di input il <strong>nome della città</strong> o del <strong>comune</strong> in lingua originaria oppure in lingua inglese. <strong>( milano - milan )</strong>.
               </b-card-text>
               <b-card-text>
-                Una volta compilato il campo di input sarà sufficiente premere il pulsate 'Search'. Automaticamente verranno riportati i dati relativi alla più vicina stazione di rilevamento AQI della posizione selezionata.
+                Una volta compilato il campo di input sarà sufficiente <strong>premere il pulsate 'Search'</strong>. Automaticamente verranno riportati i <strong>dati</strong> relativi alla <strong>più vicina stazione</strong> di rilevamento AQI della posizione selezionata.
               </b-card-text>
               <b-card-text>
-                In caso di errore di inserimento o mancata presenza della posizione geografica della città o comune comparirà un errore in rosso che specificherà il tipo di problema riscontrato.
+                <strong>In caso di errore</strong> di inserimento o mancata presenza della posizione geografica della città o comune <strong>comparirà un avviso in rosso</strong> che specificherà il tipo di problema riscontrato.
               </b-card-text>
               <b-button v-b-toggle.collapse-1-inner size="sm" variant="danger">Maggiori informazioni <b-icon-exclamation-triangle scale="1.1"></b-icon-exclamation-triangle></b-button>
               <b-collapse id="collapse-1-inner" class="mt-2">
-                <b-card>Attenzione, si potrebbero verificare problemi nella ricerca di città il quale nome non utilizza caratteri dell'alfabeto internazionale. Si consiglia, per questi casi, di utilizzare la ricerca attraverso le coordinate geografiche.</b-card>
+                <b-card>Attenzione, si potrebbero verificare problemi nella ricerca di <strong>città</strong> il quale <strong>nome non utilizza caratteri dell'alfabeto internazionale.</strong> Si consiglia, per questi casi, di utilizzare la ricerca attraverso le coordinate geografiche.</b-card>
               </b-collapse>
               <hr>
               <b-button @click="set_search_type_preference('city')">Nome città</b-button>
@@ -39,16 +39,16 @@
               <b-card-text class="font-weight-bold">Geo-coordinate</b-card-text>
               <hr>
               <b-card-text>
-                Questa modalità di ricerca permette di ricavare l'indice di qualità dell'aria inserendo all'interno dei campi di input la latitudine e longitudine decimali della città o del comune.
+                Questa modalità di ricerca permette di ricavare l'indice di qualità dell'aria inserendo all'interno dei campi di input la <strong>latitudine e longitudine decimali</strong> della città o del comune.
               </b-card-text>
               <b-card-text>
-                Per la ricerca si possono utilizzare valori fino a 6 cifre significative potendo utilizzare sia il punto ' . ' che la virgola ' , ' per la separazione dei numeri decimali.
+                Per la ricerca si possono utilizzare valori fino a 6 cifre significative <strong>potendo utilizzare sia il punto ' . ' che la virgola ' , '</strong> per la separazione dei numeri decimali.
               </b-card-text>
               <b-card-text>
-                Una volta compilati i campi di input sarà sufficiente premere il pulsate 'Search'. Automaticamente verranno riportati i dati relativi alla più vicina stazione di rilevamento AQI della posizione selezionata.
+                Una volta compilati i campi di input sarà sufficiente <strong>premere il pulsate 'Search'</strong>. Automaticamente verranno riportati i <strong>dati</strong> relativi alla <strong>più vicina stazione</strong> di rilevamento AQI della posizione selezionata.
               </b-card-text>
               <b-card-text>
-                In caso di errore di inserimento o mancata presenza della posizione geografica della città o comune comparirà un errore in rosso che specificherà il tipo di problema riscontrato.
+                <strong>In caso di errore</strong> di inserimento dati o mancata presenza della posizione geografica della città o comune <strong>comparirà un avviso in rosso</strong> che specificherà il tipo di problema riscontrato.
               </b-card-text>
               <hr>
               <b-button @click="set_search_type_preference('coords')">Geo-coordinate</b-button>
@@ -57,20 +57,20 @@
               <b-card-text class="font-weight-bold">GPS location</b-card-text>
               <hr>
               <b-card-text>
-                Questa modalità di ricerca permette di ricavare l'indice di qualità dell'aria attraverso la posizione GPS del tuo dispositivo.
+                Questa modalità di ricerca permette di ricavare l'indice di qualità dell'aria attraverso la <strong>posizione GPS</strong> del tuo dispositivo.
               </b-card-text>
               <b-card-text>
-                Sarà sufficiente premere il pulsate 'Search'. Automaticamente verranno riportati i dati relativi alla più vicina stazione di rilevamento AQI dalla tua posizione corrente.
+                Sarà sufficiente <strong>premere il pulsate 'Search'</strong>. Automaticamente verranno riportati i <strong>dati</strong> relativi alla <strong>più vicina stazione</strong> di rilevamento AQI dalla tua posizione corrente.
               </b-card-text>
               <b-card-text>
-                Gli errori potrebbero essere di 3 nature differenti:
-                <br> 1) Il GPS del tuo dispositivo è disabilitato, per le nuove versioni dei browser comparirà un messaggio con la richiesta di permesso di attivazione. Una volta confermata la richiesta; la ricerca procederà automaticamente.
-                <br> 2) L'accesso alla posizione GPS è stato negato, in tal caso comparirà un pop-up di errore con la richiesta di fornire il permesso alla web-app. La richiesta dovrà essere soddisfatta dall'utente, non è possibile automatizzare il processo.
-                <br> 3) Il dispositivo non ha un GPS. In tal caso non è possibile utilizzare questa modalità di ricerca. Si consiglia di utilizzarne una differente.
+                Gli <strong>errori</strong> potrebbero essere di <strong>3 nature differenti</strong>:
+                <br> <strong>1)</strong> Il <strong>GPS</strong> del tuo dispositivo è <strong>disabilitato</strong>, per le nuove versioni dei browser comparirà un messaggio con la <strong>richiesta di permesso di attivazione</strong>. Una volta confermata la richiesta; la ricerca procederà automaticamente.
+                <br> <strong>2)</strong> L'<strong>accesso</strong> alla posizione GPS è stato <strong>negato</strong>, in tal caso comparirà un <strong>pop-up di errore</strong> con la richiesta di fornire il permesso alla web-app. <strong>La richiesta dovrà essere soddisfatta dall'utente</strong>, non è possibile automatizzare il processo.
+                <br> <strong>3)</strong> Il dispositivo <strong>non ha un GPS</strong>. In tal caso <strong>non è possibile utilizzare questa modalità</strong> di ricerca. Si consiglia di utilizzarne una differente.
               </b-card-text>
               <b-button v-b-toggle.collapse-1-inner size="sm" variant="danger">Maggiori informazioni <b-icon-exclamation-triangle scale="1.1"></b-icon-exclamation-triangle></b-button>
               <b-collapse id="collapse-1-inner" class="mt-2">
-                <b-card>Se è la prima volta che si naviga a questo indirizzo, il permesso all'utilizzo del GPS è impostato a 'chiedi prima'. In tal caso al primo tentativo di ricerca attraverso il GPS comparirà la richiesta se negare o consentire alla web-app di utilizzare la posizione del dispositivo. Se si vuole utilizzare questa modalità di ricerca è necessario premere su Consenti.</b-card>
+                <b-card>Se è la prima volta che si naviga a questo indirizzo, il <strong>permesso</strong> all'utilizzo del GPS è <strong>impostato a 'chiedi prima'</strong>. In tal caso al primo tentativo di ricerca attraverso il GPS <strong>comparirà la richiesta</strong> se negare o consentire alla web-app di utilizzare la posizione del dispositivo. Se si vuole utilizzare questa modalità di ricerca è necessario <strong>premere su Consenti</strong>.</b-card>
               </b-collapse>
               <hr>
               <b-button @click="set_search_type_preference('gps')">Posizione GPS</b-button>
@@ -79,17 +79,17 @@
               <b-card-text class="font-weight-bold">IP location</b-card-text>
               <hr>
               <b-card-text>
-                Questa modalità di ricerca permette di ricavare l'indice di qualità dell'aria attraverso l'indirizzo IP del tuo dispositivo.
+                Questa modalità di ricerca permette di ricavare l'indice di qualità dell'aria attraverso <strong>l'indirizzo IP</strong> del tuo dispositivo.
               </b-card-text>
               <b-card-text>
-                Sarà sufficiente premere il pulsate 'Search'. Automaticamente verranno riportati i dati relativi alla più vicina stazione di rilevamento AQI dalla tua posizione IP corrente.
+                Sarà sufficiente <strong>premere il pulsate 'Search'</strong>. Automaticamente verranno riportati i <strong>dati</strong> relativi alla <strong>più vicina stazione</strong> di rilevamento AQI dalla tua posizione IP corrente.
               </b-card-text>
               <b-card-text>
                 Non si dovrebbero verificare errori si alcun genere.
               </b-card-text>
               <b-button v-b-toggle.collapse-1-inner size="sm" variant="danger">Maggiori informazioni <b-icon-exclamation-triangle scale="1.1"></b-icon-exclamation-triangle></b-button>
               <b-collapse id="collapse-1-inner" class="mt-2">
-                <b-card>In questa modalità non verranno ricevuti i dati della stazione AQI più vicina all'utente ma i dati della stazione più vicina all'indirizzo IP del proprio device. l'utilizzo dei dati mobili o di un servizio VPN potrebbe notevolmente influire sulla precisione della ricerca. Si consiglia di utilizzare, per una maggiore precisione, la modalità GPS</b-card>
+                <b-card>In questa modalità <strong>non verranno ricevuti</strong> i dati della <strong>stazione AQI più vicina</strong> all'utente ma i dati della <strong>stazione più vicina all'indirizzo IP</strong> del proprio device. l'utilizzo dei <strong>dati mobili</strong> o di un <strong>servizio VPN</strong> potrebbe notevolmente influire sulla <strong>precisione della ricerca</strong>. Si consiglia di utilizzare, per una maggiore precisione, la modalità GPS</b-card>
               </b-collapse>
               <hr>
               <b-button @click="set_search_type_preference('ip')">Indirizzo IP</b-button>
@@ -100,17 +100,17 @@
               <b-card-text class="font-weight-bold">City name</b-card-text>
               <hr>
               <b-card-text>
-                This search mode allows you to obtain the air quality index by entering the name of the city or municipality in the original language or in English in the single input field. ( milano - milan ).
+                This search mode allows you to obtain the air quality index by entering the <strong>name of the city</strong> or <strong>municipality</strong> in the original language or in English in the single input field. <strong>( milano - milan )</strong>.
               </b-card-text>
               <b-card-text>
-                Once the input field has been filled in, simply press the 'Search' button. The data relating to the nearest AQI survey station of the selected position will be automatically reported.
+                Once the input field has been filled in, simply <strong>press the 'Search' button</strong>. The <strong>data</strong> relating to the <strong>nearest AQI survey station</strong> of the selected position will be automatically reported.
               </b-card-text>
               <b-card-text>
-                In case of insertion error or lack of geographical position of the city or municipality, an error will appear in red that will specify the type of problem encountered.
+                <strong>In case of insertion error</strong> or lack of geographical position of the city or municipality, <strong>an advise will appear in red</strong> that will specify the type of problem encountered.
               </b-card-text>
               <b-button v-b-toggle.collapse-1-inner size="sm" variant="danger">More information <b-icon-exclamation-triangle scale="1.1"></b-icon-exclamation-triangle></b-button>
               <b-collapse id="collapse-1-inner" class="mt-2">
-                <b-card>Attention, there may be problems in searching for cities whose name does not use characters of the international alphabet. It is advisable, for these cases, to use the search through geographic coordinates.</b-card>
+                <b-card>Attention, there may be problems in searching for <strong>cities whose name does not use characters of the international alphabet</strong>. It is advisable, for these cases, to use the search through geographic coordinates.</b-card>
               </b-collapse>
               <hr>
               <b-button @click="set_search_type_preference('city')">City Name</b-button>
@@ -119,16 +119,16 @@
               <b-card-text class="font-weight-bold">Geo-coordinates</b-card-text>
               <hr>
               <b-card-text>
-                This search mode allows you to obtain the air quality index by entering the decimal latitude and longitude of the city or municipality in the input fields.
+                This search mode allows you to obtain the air quality index by entering the <strong>decimal latitude and longitude</strong> of the city or municipality in the input fields.
               </b-card-text>
               <b-card-text>
-                Values of up to 6 significant digits can be used for the search, being able to use both the dot ' . ' than the comma ' , ' for the separation of decimal numbers.
+                Values of up to 6 significant digits can be used for the search, being <strong>able to use both the dot ' . ' than the comma ' , ' </strong>for the separation of decimal numbers.
               </b-card-text>
               <b-card-text>
-                Once the input fields have been filled in, simply press the 'Search' button. The data relating to the nearest AQI survey station of the selected position will be automatically reported.
+                Once the input fields have been filled in, simply <strong>press the 'Search' button</strong>. The <strong>data</strong> relating to the <strong>nearest AQI survey station</strong> of the selected position will be automatically reported.
               </b-card-text>
               <b-card-text>
-                In case of insertion error or lack of geographical position of the city or municipality, an error will appear in red that will specify the type of problem encountered.
+                <strong>In case of insertion error</strong> or lack of geographical position of the city or municipality, <strong>an error will appear in red</strong> that will specify the type of problem encountered.
               </b-card-text>
               <hr>
               <b-button @click="set_search_type_preference('coords')">Geo-coordinates</b-button>

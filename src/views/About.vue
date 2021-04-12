@@ -4,7 +4,7 @@
       <div class="div-main">
         <h2>City Pollution Tambu</h2>
         <img src="../assets/favicon.png" alt="logo" width="150" height="150" style="margin: 10px">
-        <p style="font-family: JosefinSans, monospace"><Strong>Codemotion 2021</Strong> project by Pietro Tamburini <strong>Milano</strong></p>
+        <p style="font-family: JosefinSans, monospace"><Strong>High Tech High School 2021</Strong> project by Pietro Tamburini <strong>Milano</strong></p>
         <hr>
         <h3>Source Code:</h3>
         <p> GitHub:
