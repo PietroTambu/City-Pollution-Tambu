@@ -12,7 +12,7 @@
           <img src="../assets/github.png" alt="GitHub Logo" width="50" height="50" style="margin-left: 10px">
         </p>
         <hr>
-        <a href="http://4a.maxapp.it/tamburini/City-Pollution-Tambu-v.1.0.1.apk" alt="City Pollution Android" target="_blank" download>Download APK v. 1.0.1</a>
+        <a href="http://www.pietro-tamburini.epizy.com/City_Pollution_Tambu_APK/" alt="City Pollution Android" target="_blank" download>Download APK v. 1.0.1</a>
         <hr>
         <table class="b-table">
           <b-table small :fields="fields" :items="items" responsive="sm" :bordered="bordered" :dark="dark">
