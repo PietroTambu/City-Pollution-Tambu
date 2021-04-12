@@ -47,7 +47,6 @@ export default {
         { name: { name: 'Webstorm for education', url: 'https://www.jetbrains.com/webstorm/' }, utility: 'JavaScript IDE', icon: '../assets/webstorm-icon.png', _rowVariant: 'table-gray' },
         { name: { name: 'World Air Quality Index', url: 'https://aqicn.org/map/world/' }, utility: 'Data Provider', icon: '../assets/aqicn-logo.png', _rowVariant: 'light' }
       ],
-      tableVariants: ['primary', 'secondary', 'info', 'danger', 'warning', 'success', 'light', 'dark'],
       dark: true,
       bordered: true,
       showMain: true
