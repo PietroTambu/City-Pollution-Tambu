@@ -29,8 +29,8 @@
               <b-card-text>
                 <strong>In caso di errore</strong> di inserimento o mancata presenza della posizione geografica della città o comune <strong>comparirà un avviso in rosso</strong> che specificherà il tipo di problema riscontrato.
               </b-card-text>
-              <b-button v-b-toggle.collapse-1-inner size="sm" variant="danger">Maggiori informazioni <b-icon-exclamation-triangle scale="1.1"></b-icon-exclamation-triangle></b-button>
-              <b-collapse id="collapse-1-inner" class="mt-2">
+              <b-button v-b-toggle.collapse-city-name-ita size="sm" variant="danger">Maggiori informazioni <b-icon-exclamation-triangle scale="1.1"></b-icon-exclamation-triangle></b-button>
+              <b-collapse id="collapse-city-name-ita" class="mt-2">
                 <b-card>Attenzione, si potrebbero verificare problemi nella ricerca di <strong>città</strong> il quale <strong>nome non utilizza caratteri dell'alfabeto internazionale.</strong> Si consiglia, per questi casi, di utilizzare la ricerca attraverso le coordinate geografiche.</b-card>
               </b-collapse>
               <hr>
@@ -69,8 +69,8 @@
                 <br> <strong>2)</strong> L'<strong>accesso</strong> alla posizione GPS è stato <strong>negato</strong>, in tal caso comparirà un <strong>pop-up di errore</strong> con la richiesta di fornire il permesso alla web-app. <strong>La richiesta dovrà essere soddisfatta dall'utente</strong>, non è possibile automatizzare il processo.
                 <br> <strong>3)</strong> Il dispositivo <strong>non ha un GPS</strong>. In tal caso <strong>non è possibile utilizzare questa modalità</strong> di ricerca. Si consiglia di utilizzarne una differente.
               </b-card-text>
-              <b-button v-b-toggle.collapse-1-inner size="sm" variant="danger">Maggiori informazioni <b-icon-exclamation-triangle scale="1.1"></b-icon-exclamation-triangle></b-button>
-              <b-collapse id="collapse-1-inner" class="mt-2">
+              <b-button v-b-toggle.collapse-gps-ita size="sm" variant="danger">Maggiori informazioni <b-icon-exclamation-triangle scale="1.1"></b-icon-exclamation-triangle></b-button>
+              <b-collapse id="collapse-gps-ita" class="mt-2">
                 <b-card>Se è la prima volta che si naviga a questo indirizzo, il <strong>permesso</strong> all'utilizzo del GPS è <strong>impostato a 'chiedi prima'</strong>. In tal caso al primo tentativo di ricerca tramite GPS <strong>comparirà la richiesta</strong> se negare o consentire alla web-app di utilizzare la posizione del dispositivo. Se si vuole utilizzare questa modalità di ricerca è necessario <strong>premere su Consenti</strong>.</b-card>
               </b-collapse>
               <hr>
@@ -88,8 +88,8 @@
               <b-card-text>
                 Non si dovrebbero verificare errori si alcun genere.
               </b-card-text>
-              <b-button v-b-toggle.collapse-1-inner size="sm" variant="danger">Maggiori informazioni <b-icon-exclamation-triangle scale="1.1"></b-icon-exclamation-triangle></b-button>
-              <b-collapse id="collapse-1-inner" class="mt-2">
+              <b-button v-b-toggle.collapse-ip-ita size="sm" variant="danger">Maggiori informazioni <b-icon-exclamation-triangle scale="1.1"></b-icon-exclamation-triangle></b-button>
+              <b-collapse id="collapse-ip-ita" class="mt-2">
                 <b-card>In questa modalità <strong>non verranno ricevuti</strong> i dati della <strong>stazione AQI più vicina</strong> all'utente ma i dati della <strong>stazione più vicina all'indirizzo IP</strong> del proprio dispositivo. l'utilizzo dei <strong>dati mobili</strong> o di un <strong>servizio VPN</strong> potrebbe notevolmente influire sulla <strong>precisione della ricerca</strong>. Si consiglia di utilizzare, per una maggiore precisione, la modalità GPS</b-card>
               </b-collapse>
               <hr>
@@ -135,8 +135,8 @@
               <b-card-text>
                 <strong>In case of insertion error</strong> or lack of geographical position of the city or municipality, <strong>an advise will appear in red</strong> that will specify the type of problem encountered.
               </b-card-text>
-              <b-button v-b-toggle.collapse-1-inner size="sm" variant="danger">More information <b-icon-exclamation-triangle scale="1.1"></b-icon-exclamation-triangle></b-button>
-              <b-collapse id="collapse-1-inner" class="mt-2">
+              <b-button v-b-toggle.collapse-city-name-eng size="sm" variant="danger">More information <b-icon-exclamation-triangle scale="1.1"></b-icon-exclamation-triangle></b-button>
+              <b-collapse id="collapse-city-name-eng" class="mt-2">
                 <b-card>Attention, there may be problems in searching for <strong>cities whose name does not use characters of the international alphabet</strong>. It is advisable, for these cases, to use the search through geographic coordinates.</b-card>
               </b-collapse>
               <hr>
@@ -175,8 +175,8 @@
                 <br> 2) <strong>Access</strong> to the GPS position <strong>has been denied</strong>, in this case an <strong>error pop-up will appear</strong> with the request to provide permission to the web-app. <strong>The request must be fulfilled by the user</strong>, it is not possible to automate the process.
                 <br> 3) The device <strong>does not have a GPS</strong>. In this case, <strong>this search mode cannot be used</strong>. It is recommended to use a different one.
               </b-card-text>
-              <b-button v-b-toggle.collapse-1-inner size="sm" variant="danger">More information <b-icon-exclamation-triangle scale="1.1"></b-icon-exclamation-triangle></b-button>
-              <b-collapse id="collapse-1-inner" class="mt-2">
+              <b-button v-b-toggle.collapse-gps-eng size="sm" variant="danger">More information <b-icon-exclamation-triangle scale="1.1"></b-icon-exclamation-triangle></b-button>
+              <b-collapse id="collapse-gps-eng" class="mt-2">
                 <b-card>
                   If this is your first time navigating to this internet address, <strong>the permission</strong> to use the GPS <strong>is set to 'ask first'</strong>. In this case, at the first attempt to search through the GPS, the request <strong>will appear whether to deny or allow the web-app to use the device's position</strong>. If you want to use this search mode, you need to <strong>click on Allow</strong>.
                 </b-card>
@@ -196,8 +196,8 @@
               <b-card-text>
                 There should be no errors of any kind.
               </b-card-text>
-              <b-button v-b-toggle.collapse-1-inner size="sm" variant="danger">More information <b-icon-exclamation-triangle scale="1.1"></b-icon-exclamation-triangle></b-button>
-              <b-collapse id="collapse-1-inner" class="mt-2">
+              <b-button v-b-toggle.collapse-ip-eng size="sm" variant="danger">More information <b-icon-exclamation-triangle scale="1.1"></b-icon-exclamation-triangle></b-button>
+              <b-collapse id="collapse-ip-eng" class="mt-2">
                 <b-card>
                   In this mode, the data of the <strong>AQI station closest to the IP address</strong> of your device will be received. using <strong>mobile data</strong> or a <strong>VPN service</strong> could significantly affect search accuracy. It is recommended to <strong>use the GPS mode for better accuracy</strong>.
                 </b-card>
