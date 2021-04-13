@@ -43,7 +43,7 @@
                 Questa modalità di ricerca permette di ricavare l'indice di qualità dell'aria inserendo all'interno dei campi di input la <strong>latitudine e longitudine decimali</strong> della città o del comune.
               </b-card-text>
               <b-card-text>
-                Per la ricerca si possono utilizzare valori fino a 6 cifre significative <strong>potendo utilizzare sia il punto ' . ' che la virgola ' , '</strong> per la separazione dei numeri decimali.
+                Per la ricerca si possono utilizzare valori fino a 8 cifre significative <strong>potendo utilizzare sia il punto ' . ' che la virgola ' , '</strong> per la separazione dei numeri decimali.
               </b-card-text>
               <b-card-text>
                 Una volta compilati i campi di input sarà sufficiente <strong>premere il pulsate 'Search'</strong>. Automaticamente verranno riportati i <strong>dati</strong> relativi alla <strong>più vicina stazione</strong> di rilevamento AQI della posizione selezionata.
@@ -149,7 +149,7 @@
                 This search mode allows you to obtain the air quality index by entering the <strong>decimal latitude and longitude</strong> of the city or municipality in the input fields.
               </b-card-text>
               <b-card-text>
-                Values of up to 6 significant digits can be used for the search, being <strong>able to use both the dot ' . ' than the comma ' , ' </strong>for the separation of decimal numbers.
+                Values of up to 8 significant digits can be used for the search, being <strong>able to use both the dot ' . ' than the comma ' , ' </strong>for the separation of decimal numbers.
               </b-card-text>
               <b-card-text>
                 Once the input fields have been filled in, simply <strong>press the 'Search' button</strong>. The <strong>data</strong> relating to the <strong>nearest AQI survey station</strong> of the selected position will be automatically reported.

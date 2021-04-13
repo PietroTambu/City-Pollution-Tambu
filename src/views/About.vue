@@ -14,6 +14,19 @@
         <hr>
         <a href="http://www.pietro-tamburini.epizy.com/City_Pollution_Tambu_APK/" alt="City Pollution Android" target="_blank" download>Download APK v. 1.0.1</a>
         <hr>
+        <b-button v-b-toggle.collapse-demo-apk size="sm" variant="secondary">Try Phone Demo <b-icon-phone></b-icon-phone></b-button>
+        <b-collapse id="collapse-demo-apk" class="mt-2">
+          <div style="margin: auto;">
+          <iframe
+            src="https://appetize.io/embed/5h7hf41qc8gzvf8gykue3n0bww?device=nexus5"
+            width="300px"
+            height="600px"
+            frameborder="0"
+            scrolling="no"
+          ></iframe>
+          </div>
+        </b-collapse>
+        <hr>
         <table class="b-table">
           <b-table small :fields="fields" :items="items" responsive="sm" :bordered="bordered" :dark="dark">
             <template  #cell(name)="data">
