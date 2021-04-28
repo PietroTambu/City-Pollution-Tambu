@@ -1,16 +1,19 @@
-<template>
+﻿<template>
   <div style="width: fit-content; margin: auto">
     <b-overlay :show="showMain" rounded="sm" variant="secondary" opacity="0.85" blur="2px" style="width: -moz-fit-content; margin: auto">
       <div class="div-main">
         <h2>City Pollution Tambu</h2>
         <img src="../assets/favicon.png" alt="logo" width="150" height="150" style="margin: 10px">
-        <p style="font-family: JosefinSans, monospace"><Strong>High Tech High School 2021</Strong> project by Pietro Tamburini <strong>Milano</strong></p>
+        <p style="font-family: JosefinSans, monospace"><Strong>High Tech High School 2021</Strong> Project / <Strong>S2I JavaScript Advanced</Strong></p>
+        <p style="font-family: JosefinSans, monospace"></p>
+        <p style="font-family: JosefinSans, monospace">by Pietro Tamburini <strong>Milano</strong></p>
         <hr>
         <h3>Source Code:</h3>
         <p> GitHub:
-          <a href="https://github.com/PietroTambu/city-pollution-codemotion" target="_blank">City-Pollution-Codemotion </a>
+          <a href="https://github.com/PietroTambu/City-Pollution-Tambu" target="_blank">City-Pollution-Tambu </a>
           <img src="../assets/github.png" alt="GitHub Logo" width="50" height="50" style="margin-left: 10px">
         </p>
+        <!--
         <hr>
         <a href="http://www.pietro-tamburini.epizy.com/City_Pollution_Tambu_APK/" alt="City Pollution Android" target="_blank" download>Download APK v. 1.0.1</a>
         <hr>
@@ -27,6 +30,7 @@
           </div>
         </b-collapse>
         <hr>
+        -->
         <table class="b-table">
           <b-table small :fields="fields" :items="items" responsive="sm" :bordered="bordered" :dark="dark">
             <template  #cell(name)="data">

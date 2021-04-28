@@ -1,4 +1,4 @@
-# City-Pollution-Codemotion
+# City-Pollution-Tambu
 
 ## Project setup
 ```
