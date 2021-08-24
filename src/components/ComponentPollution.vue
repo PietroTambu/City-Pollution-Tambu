@@ -4,7 +4,7 @@
       <div class="div-main">
         <b-overlay :show="showInput" rounded="sm" variant="secondary" opacity="0.85" blur="2px">
           <div class="title">
-            <h1 class="PottaOne gray-1">City Air Pollution</h1>
+            <h1 class="PottaOne gray-1">City Pollution</h1>
             <hr>
             <h6 class="Fraunces gray-3">Discover Air Quality Index around the world.</h6>
             <h6 class="Fraunces gray-3">Use one of the following search methods</h6>

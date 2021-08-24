@@ -7,7 +7,7 @@
           <h4 class="PottaOne gray-3">Welcome to City Pollution by Tambu</h4>
         </div>
         <hr>
-        <h5 class="Fraunces gray-3">On this website you will be able to find out the AQI, "Air Quality Index", of most cities around the world.</h5>
+        <h5 class="Fraunces gray-3">On this webapp you will be able to find out the AQI, "Air Quality Index", of most cities around the world.</h5>
         <hr>
         <div>
           <b-button @click="changeLanguage()" v-if="this.language === 'English'"><b class="font-weight-bold">English</b> <b-icon-arrow-left-right scale="0.9"></b-icon-arrow-left-right> Italiano</b-button>

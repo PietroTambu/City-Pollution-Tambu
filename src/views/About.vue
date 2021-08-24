@@ -2,7 +2,7 @@
   <div style="width: fit-content; margin: auto">
     <b-overlay :show="showMain" rounded="sm" variant="secondary" opacity="0.85" blur="2px" style="width: -moz-fit-content; margin: auto">
       <div class="div-main">
-        <h2>City Pollution Tambu</h2>
+        <h2>City Pollution <small>by </small>Tambu</h2>
         <img src="../assets/favicon.png" alt="logo" width="150" height="150" style="margin: 10px">
         <p style="font-family: JosefinSans, monospace"><Strong>High Tech High School 2021</Strong> Project / <Strong>S2I JavaScript Advanced</Strong></p>
         <p style="font-family: JosefinSans, monospace"></p>
